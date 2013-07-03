@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Mario {C}art</h1>
+  <!-- <form name= method="post" action="/"> -->
+<!--     Select the number of players:
+    <select id="num_players">
+      <option value="2" selected="selected">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select> -->
+  <!-- </form> -->
+
+  <p>Enter your names and select your avatars.</p>
+
+  <form method="post" action="/race">
+    <input type="text" name="p1[name]" placeholder="Player 1">   
+    <div class="options">
+      <% Icon.all.each do |icon| %>
+        <input type="radio" name="p1[icon]" value="<%= icon.path %>">
+        <div class="img"><img src="<%= icon.path %>" alt="<%= icon.name %>"></div>
+      <% end %>
+    </div>
+    <br>
+
+    <input type="text" name="p2[name]" placeholder="Player 2">    
+    <div class="options">
+      <% Icon.all.each do |icon| %>
+        <input type="radio" name="p2[icon]" value="<%= icon.path %>">
+        <div class="img"><img src="<%= icon.path %>" alt="<%= icon.name %>"></div>
+      <% end %>
+    </div>
+
+    <input type="submit" value="Race!">
+  </form>
+</div>

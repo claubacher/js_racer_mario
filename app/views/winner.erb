@@ -1,0 +1,10 @@
+<div class="container">
+	<%= @winner.name %> won! <br>
+	And it only took
+	<%= @match.updated_at - @match.created_at %>
+	seconds. <br>
+	That's 
+	<%= @winner.wins %>
+	for 
+	<%= @winner.name %>.
+</div>

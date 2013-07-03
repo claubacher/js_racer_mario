@@ -1,0 +1,16 @@
+Icon.create(:name => "Bowser", 
+            :path => "/img/bowser.png")
+Icon.create(:name => "Donkey Kong", 
+            :path => "/img/dk.png")
+Icon.create(:name => "Koopa-Troopa", 
+            :path => "/img/koopa-troopa.png")
+Icon.create(:name => "Luigi", 
+            :path => "/img/luigi.png")
+Icon.create(:name => "Mario", 
+            :path => "/img/mario.png")
+Icon.create(:name => "Peach", 
+            :path => "/img/peach.png")
+Icon.create(:name => "Toad", 
+            :path => "/img/toad.png")
+Icon.create(:name => "Yoshi", 
+            :path => "/img/yoshi.png")

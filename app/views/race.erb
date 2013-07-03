@@ -1,0 +1,33 @@
+<div class="legend">
+	<% @match.players.each do |player| %>
+		<img src="<%= player.icon.path %>" >
+		<div><%= player.name %></div>
+		Press
+		<div id="<%= player.name %>_keycode"></div>
+		to GO.
+	<% end %>
+</div>
+<div class="race">
+	<table>
+	<% @match.players.each do |player| %>
+		<tr id="<%= player.name %>">
+			<td class="active"><img src="<%= player.icon.path %>"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	<% end %>
+	</table>
+</div>
