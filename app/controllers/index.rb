@@ -6,6 +6,8 @@ end
 post '/race' do
   @match = Match.create()
 
+  puts params.inspect
+
   player1 = Player.find_or_create_by_name(params[:p1][:name])
   player1.icon = Icon.find_by_path(params[:p1][:icon])
   player2 = Player.find_or_create_by_name(params[:p2][:name])

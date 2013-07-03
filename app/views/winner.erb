@@ -1,10 +1,11 @@
-<div class="container">
-	<%= @winner.name %> won! <br>
+<div class="winner">
+	<%= @winner.name %> won!
 	And it only took
 	<%= @match.updated_at - @match.created_at %>
 	seconds. <br>
 	That's 
 	<%= @winner.wins %>
-	for 
-	<%= @winner.name %>.
+	wins for 
+	<%= @winner.name %>.<br>
+	<p>Click <a href="/">here</a> to play again.</p>
 </div>

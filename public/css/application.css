@@ -7,11 +7,17 @@
 th {
   text-align: left;
 }
+table{
+	margin: 10px auto;
+}
 td{
 	border: 1px solid black;
 	padding: 8px;
-	width: 80px;
+	width: 50px;
 }
+/*td:last-child{
+	border: 1px solid #119911;
+}*/
 .container h1{
 	font-size: 42pt;
 	font-weight: 800;
@@ -55,3 +61,32 @@ input[type="submit"] {
 	letter-spacing: 1px;
 	border: none;
 }
+.legend div {
+	margin-left: 25%;
+	display: inline-block;
+	width: 120px;
+	padding: 20px;
+}
+.legend #directions {
+	display: block;
+}
+.legend #name {
+	vertical-align: middle;
+}
+.winner {
+	margin: 40px auto;
+	font-size: x-large;
+	background: #119911;
+	color: white;
+	width: 60%;
+	border-radius: 10px;
+	padding: 20px;
+}
+.winner p {
+	margin: 16px 0px 0px 0px;
+}
+.winner a {
+	color: white;
+}
+
+

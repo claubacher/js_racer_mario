@@ -1,3 +1,6 @@
+// key codes
+// p = 80; q = 81
+
 function Player(name, keycode) {
 	this.name = name;
 	this.keycode = keycode;
@@ -18,37 +21,31 @@ var players = [];
 var playing = true;
 
 function Game() {
-	this.advancePlayers = function(event) {
-		for(i = 0; i < players.length; i++) {
-			if(event.which === players[i].keycode) {
-				players[i].advance();
-				players[i].currentCell = $('tr#' + players[i].name).find('.active');
-			}
-		}
-	}
-	this.checkForWinner = function() {
-		for(i = 0; i < players.length; i++) {
-			if(players[i].currentCell.is("td:last-child")) {
-				var winner = players[i].name;
-				$.post('/winner', {winner: winner}, function(result){
-					$('.race').append(result);
-				});
-				playing = false;
-			}
-		}
-	}
-	this.play = function() {
+	this.play = function () {
 		$(document).on("keyup", function(event) {
 			if(playing) {
-				this.advancePlayers(event);
-				this.checkForWinner();
+				for(i = 0; i < players.length; i++) {
+					if(event.which === players[i].keycode) {
+						players[i].advance();
+						players[i].currentCell = $('tr#' + players[i].name).find('.active');
+					}
+				}
+				for(i = 0; i < players.length; i++) {
+					if(players[i].currentCell.is("td:last-child")) {
+						var winner = players[i].name;
+						$.post('/winner', {winner: winner}, function(result){
+							$('.race').append(result);
+						});
+						playing = false;
+					}
+				}
 			}	
 		});
 	}
 }
 
 $(document).ready(function() {
-	var keycodes = [80, 81, 82, 83, 84, 85, 86, 87]; 
+	var keycodes = [81, 80, 82, 83, 84, 85, 86, 87]; 
 	i = 0;
 	$('tr').each(function() {
 		var name = $(this).attr('id');
@@ -57,16 +54,7 @@ $(document).ready(function() {
 		$('.legend #' + name + '_keycode').text(String.fromCharCode(keycode));	
 		i++;
 	});
+	
 	game = new Game();
 	game.play();
 });
-
-// $(document).ready(function(){
-// 	$('#num_players')
-// })
-
-
-
-
-
-

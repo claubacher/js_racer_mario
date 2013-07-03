@@ -1,10 +1,12 @@
 <div class="legend">
 	<% @match.players.each do |player| %>
-		<img src="<%= player.icon.path %>" >
-		<div><%= player.name %></div>
-		Press
-		<div id="<%= player.name %>_keycode"></div>
-		to GO.
+		<div>
+			<span><img src="<%= player.icon.path %>" ></span>
+			<span id="name"><%= player.name %></span>
+			<span id="directions">Press
+			<span id="<%= player.name %>_keycode"></span>
+			to GO.</span>
+		</div>
 	<% end %>
 </div>
 <div class="race">
